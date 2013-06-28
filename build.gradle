@@ -1,0 +1,70 @@
+buildscript {
+    repositories {
+        mavenRepo(name: 'Maven Central Proxy', url: 'http://whyldeap42:8089/nexus/content/repositories/central/')
+		mavenRepo(name: 'JBoss Central Proxy', url: 'http://repository.jboss.org/maven2/')
+    }
+
+    dependencies {
+        classpath "org.grails:grails-gradle-plugin:1.0",
+                  "org.grails:grails-bootstrap:1.3.4"
+    }
+}
+
+apply plugin: "grails"
+version = '1.1'
+
+repositories {
+    mavenCentral()
+    mavenRepo urls: "http://repository.jboss.org/maven2/"
+}
+
+dependencies {
+    compile "org.grails:grails-crud:1.3.4",
+            "org.grails:grails-gorm:1.3.4"
+}
+
+apply plugin: 'sonar-runner'
+
+
+sonarRunner {
+	sonarProperties {
+		property "sonar.host.url", "http://whyldeap42:9000/"
+		property "sonar.jdbc.url", "jdbc:oracle:thin:@bmtrepo:1521/bmtrepo.group.net"
+		property "sonar.jdbc.driverClassName", "oracle.jdbc.driver.OracleDriver"
+	
+		property "sonar.projectKey", "com.LV:RelEnv"
+		property "sonar.projectVersion", "v1.0.0"
+		property "sonar.projectName", "RelEnv"
+		property "sonar.language", "grvy" 
+		property "sonar.sources", "grails-app"
+		property "sonar.exclusions", ""
+	}
+}
+
+task localAnalysis << {
+	def console = System.console()
+	def password
+	if (console) {
+		password = console.readPassword('> Please enter your lv password: ')
+	} else {
+		logger.error "Cannot get console."
+	}
+	def files = ""
+	"git ls-files -m -o --exclude-per-directory=.gitignore".execute().text.eachLine{ line -> files += (new File(line).name) + ', '}
+	sonarRunner {
+		sonarProperties {
+			property "sonar.login", "$System.env.USERNAME"
+			property "sonar.password", "$password"
+			property "sonar.inclusions", "$files"
+			property "sonar.dryRun", "true"
+			property "sonar.issuesReport.html.enable", "true"
+			property "sonar.issuesReport.console.enable", "true"
+		}
+	}
+	tasks.sonarRunner.execute()
+}
+
+
+task wrapper(type: Wrapper) {
+  gradleVersion = "1.5"
+}

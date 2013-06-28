@@ -1,0 +1,15 @@
+<records>
+  <Release name='Release 1' status='Active' createdDate='Tue Jun 18 16:16:54 BST 2013' />
+  <Release name='Release 2' status='Active' createdDate='Tue Jun 18 16:16:54 BST 2013' />
+  <Release name='Release 3' status='Active' createdDate='Tue Jun 18 16:16:54 BST 2013' />
+  <Version appName='ORCA_ORACLE' tag='1.0.0' createdDate='Tue Jun 18 16:16:54 BST 2013' partOf='Release 1' />
+  <Version appName='ORCA_ORACLE' tag='1.0.1' createdDate='Tue Jun 18 16:16:54 BST 2013' partOf='Release 1' />
+  <Version appName='OSTP' tag='1.0.0' createdDate='Tue Jun 18 16:16:54 BST 2013' partOf='Release 2' />
+  <Version appName='LVLI' tag='1.0.0' createdDate='Tue Jun 18 16:16:54 BST 2013' partOf='Release 3' />
+  <Version appName='ORCA_ORACLE' tag='1.1.0' createdDate='Tue Jun 18 16:16:54 BST 2013' partOf='Release 3' />
+  <Stack number='1' />
+  <Stack number='2' />
+  <Stack number='3' />
+  <Environment hostname='wl-lifedev2' testTier='Development' lastRefresh='Tue Jun 18 16:16:54 BST 2013' ownedBy='Release 2' partOf='2' />
+  <Environment hostname='wl-lifedev' testTier='Development' lastRefresh='Tue Jun 18 16:16:54 BST 2013' ownedBy='Release 1' partOf='1' />
+</records>
