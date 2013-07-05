@@ -10,19 +10,14 @@ class EventController {
 	
 	def list = {
 		def eventList = []
-		 Release.each { release ->
-			 //println toJson(release.startDate)
-			 println release.name
+		 Release.list().each { release ->
 			 eventList << [
-					 //id: release.id,
+					 id: release.id,
 					 title: release.name,
-					 start: toJson(release.startDate),
-					 end: toJson(release.endDate)
+					 start: release.startDate,
+					 end: release.endDate
 				 ]
 		 }
-
-		 f = new File('myfile.txt')
-		 f.write(eventList)
 		 render eventList as JSON
 	}
 

@@ -35,13 +35,14 @@
 			}
 
 			#status h1 {
-				text-transform: uppercase;
-				font-size: 1.1em;
-				margin: 0 0 0.3em;
+				font: bold 65px/60px Helvetica, Arial, Sans-serif; 
+				text-align: center; 
+				color: #eee; 
+				text-shadow: 0px 2px 6px #333; 
 			}
 
 			#page-body {
-				margin: 2em 1em 1.25em 18em;
+			
 			}
 
 			h2 {
@@ -51,8 +52,7 @@
 			}
 
 			p {
-				line-height: 1.5;
-				margin: 0.25em 0;
+				line-height: 1.5;				
 			}
 
 			#controller-list ul {
@@ -79,42 +79,42 @@
 				}
 			}
 		</style>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
 	</head>
 	<body>
-		<a href="#page-body" class="skip"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div id="status" role="complementary">
-			<h1>Application Status</h1>
-			<ul>
-				<li>App version: <g:meta name="app.version"/></li>
-				<li>Grails version: <g:meta name="app.grails.version"/></li>
-				<li>Groovy version: ${GroovySystem.getVersion()}</li>
-				<li>JVM version: ${System.getProperty('java.version')}</li>
-				<li>Reloading active: ${grails.util.Environment.reloadingAgentEnabled}</li>
-				<li>Controllers: ${grailsApplication.controllerClasses.size()}</li>
-				<li>Domains: ${grailsApplication.domainClasses.size()}</li>
-				<li>Services: ${grailsApplication.serviceClasses.size()}</li>
-				<li>Tag Libraries: ${grailsApplication.tagLibClasses.size()}</li>
-			</ul>
-			<h1>Installed Plugins</h1>
-			<ul>
-				<g:each var="plugin" in="${applicationContext.getBean('pluginManager').allPlugins}">
-					<li>${plugin.name} - ${plugin.version}</li>
-				</g:each>
-			</ul>
-		</div>
+			
 		<div id="page-body" role="main">
 			<h1>Welcome to the LV= Environment and Release management tool</h1>
 			<p>The purpose of this tool is to offer a central location for tracking environments and the releases currently deployed to those environments.</p>                               
 
-			<div id="controller-list" role="navigation">
-				<h2>Available Controllers:</h2>
-				<ul>
-					<g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
-						<li class="controller"><g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link></li>
-					</g:each>
-				</ul>
-			</div>
-			<g:link action="index" controller="event" >Calendar Demo</g:link>
+						
+			<ul id="movieposters">
+			<li>
+				<img src="images/01_iron_man_2.jpg" alt="Iron Man 2" />
+				<div class="movieinfo">
+					<h3>Release</h3>
+					<p>List view of all currently available Release</p>
+					<g:link action="index" controller="release" >Calendar</g:link>
+				</div>
+			</li>
+			<li>
+				<img src="images/02_the_last_airbender.jpg" alt="The Last Airbender" />
+				<div class="movieinfo">
+					<h3>Version</h3>
+					<p>List view of all current available versions</p>
+					<g:link action="index" controller="version" >Version</g:link>
+				</div>
+			</li>
+			<li>
+				<img src="images/03_tron_legacy.jpg" alt="Tron Legacy" />
+				<div class="movieinfo">
+					<h3>Calendar</h3>
+					<p>Check the timelines of a planned project, and check for conflicts</p>
+					<g:link action="index" controller="event" >Calendar</g:link>
+				</div>
+			</li>
+		</ul>
+			
 		</div>
 	</body>
 </html>

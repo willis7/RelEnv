@@ -21,7 +21,7 @@
 		<div id="topbar">
 			<g:render template="/common/topbar" />
 		</div>
-		<div id="LVLogo" role="banner"><a href="http://github.com"><img src="${resource(dir: 'images', file: 'relenv.png')}" alt="Grails"/></a></div>
+		<div id="LVLogo" role="banner"><a href="https://github.com/willis7/RelEnv"><img src="${resource(dir: 'images', file: 'relenv.png')}" alt="Grails"/></a></div>
 		<g:layoutBody/>
 		<div class="footer" role="contentinfo">
 			<g:render template="/common/footer" />

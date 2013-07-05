@@ -10,10 +10,5 @@ $(document).ready(function() {
         },
         weekends: false,
         
-        eventRender: function(event, element){
-        	element.qtip({
-        		content: event.description
-        	})
-        }
     });
 });

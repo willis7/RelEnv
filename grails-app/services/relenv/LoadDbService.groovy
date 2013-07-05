@@ -14,7 +14,7 @@ class LoadDbService {
 		
 		// These do not have dependencies and can therefore be generated easily
 		data.Release.each {
-			new Release(name: "${it.'@name'}", status: "${it.'@status'}", startDate: new Date().parseToStringDate("${it.'@createdDate'}")).save(failOnError: true)
+			new Release(name: "${it.'@name'}", status: "${it.'@status'}", startDate: new Date().parseToStringDate("${it.'@startDate'}"), endDate: new Date().parseToStringDate("${it.'@endDate'}")).save(failOnError: true)
 		}
 		data.Stack.each {
 			new Stack(number: "${it.@'number'}").save(failOnError: true)

@@ -1,7 +1,7 @@
 <records>
-  <Release name='Release 1' status='Active' createdDate='Tue Jun 18 16:16:54 BST 2013' />
-  <Release name='Release 2' status='Active' createdDate='Tue Jun 18 16:16:54 BST 2013' />
-  <Release name='Release 3' status='Active' createdDate='Tue Jun 18 16:16:54 BST 2013' />
+  <Release name='Release 1' status='Active' startDate='Tue Jun 18 16:16:54 BST 2013' endDate='Fri Jun 28 16:16:54 BST 2013' />
+  <Release name='Release 2' status='Active' startDate='Wed Jul 3 16:16:54 BST 2013' endDate='Wed Jul 31 16:16:54 BST 2013' />
+  <Release name='Release 3' status='Active' startDate='Wed Jul 31 16:16:54 BST 2013' endDate='Tue Aug 27 16:16:54 BST 2013' />
   <Version appName='ORCA_ORACLE' tag='1.0.0' createdDate='Tue Jun 18 16:16:54 BST 2013' partOf='Release 1' />
   <Version appName='ORCA_ORACLE' tag='1.0.1' createdDate='Tue Jun 18 16:16:54 BST 2013' partOf='Release 1' />
   <Version appName='OSTP' tag='1.0.0' createdDate='Tue Jun 18 16:16:54 BST 2013' partOf='Release 2' />

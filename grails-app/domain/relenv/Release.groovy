@@ -5,7 +5,6 @@ class Release {
 	String name
 	String note
 	Date startDate
-	Date dueDate
 	Date endDate
 	String status
 	
@@ -17,7 +16,6 @@ class Release {
 		status(inList: ["Active", "Complete", "Dropped"], blank:false)
 		note(maxSize:1000, nullable:true)
 		endDate(nullable:true)
-		dueDate(nullable:true)
     }
 	
 	String toString(){
